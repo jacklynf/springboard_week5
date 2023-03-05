@@ -24,7 +24,7 @@ class MyClass
         m_name("copy of " + orig.desc())
     { cout << "  copy ctor " << desc() << endl; }
 
-#if 1
+#if 0
     MyClass (MyClass && orig) noexcept
       : m_uid(cm_next_uid++),
         m_name("moved from " + exchange(orig.m_name, "stolen"))
@@ -41,8 +41,8 @@ class MyClass
       return *this;
     }
 
-#if 1
-    MyClass& operator= (MyClass && orig) noexcept
+#if 0
+    MyClass& operator= (MyClass && orig) noexcept 
     {
       cout << "  move assign " << desc() << " from " << orig.desc() << endl;
 
